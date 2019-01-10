@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>uploading an activity</title>
+</head>
+<body>
+<form method="post">
+			<input type="text" name="activity_subject" placeholder="activity subject">
+			<br>
+			suitable for ages:
+  			<input type="number" name="min-age" min="1"> - <input type="number" name="max-age" min="1">
+  			<br>
+  			type of activity:
+			<select name="activity-type">
+				<option value="choose"> </option>
+  				<option value="game">Game</option>
+  				<option value="session">Session</option>
+  				<option value="story">Story</option>
+  				<option value="night">night activity</option>
+			</select>
+			<br>
+			<textarea name="content" rows="10" cols="30">write the content here.
+			</textarea>
+			<br>
+			<input type="submit" name="submit">
+    </form>
+</body>
+</html>
