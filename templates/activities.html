@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>activities</title>
+</head>
+<body>
+
+{%for activity in activities%}
+<h1>{{activity.name}}</h1>
+suitable for ages: {{activity.minage}}-{{activity.maxage}} <br>
+type of acticity: {{activity.atype}}<br>
+contet:{{activity.content}}
+{%endfor%}
+<br>
+	<a href="{{url_for('home')}}"> <button type="button" >Home</button></a>
+
+</body>
+</html>

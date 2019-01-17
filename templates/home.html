@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Activities Sharing</title>
+</head>
+<body>
+	<div>
+		<a href="{{url_for('home')"><button type="button">Home</button></a>
+		<a href="{{url_for('activities')"><button type="button">activities</button></a>
+		<form action="/search" method="post">
+			<input type="text" name="activity_name" placeholder="activity name">
+		</form>
+	</div>
+<div>
+	<p>Welcome to the Home Page!</p>
+	<br>
+	<p>Here you can upload your favorites activities and view what other people uploaded</p>
+	<p>to view activities press here</p>
+	<p>to upload a new acitivity press here</p>
+	<a href="{{url_for('add_new_activity')}}"> <button type="button" >upload an activity</button></a>
+	<a href="{{url_for('activities')}}"> <button type="button" >view all uploaded activities</button></a>
+</div>
+</body>
+</html>
