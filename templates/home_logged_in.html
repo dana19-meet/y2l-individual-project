@@ -4,26 +4,20 @@
 	<title>Activities Sharing</title>
 </head>
 <body>
-	<p>sign in</p>
-	<form method="post">
-			<input type="text" name="email" placeholder="email">
-			<input type="password" name="password" placeholder="password">
-			<input type="submit" name="submit">
-		</form>
-	<a href="{{url_for('sign_up')}}"><button type="button">sign up</button></a>
-	<br>
 	<div>
 		<a href="{{url_for('home')}}"><button type="button">Home</button></a>
 		<a href="{{url_for('activities')}}"><button type="button">activities</button></a>
 		<form action="/search" method="post">
-			<input type="text" name="name" placeholder="search by activity name">
+			<input type="text" name="name" placeholder="activity name">
 		</form>
 	</div>
 <div>
-	<p>Welcome to the Home Page!</p>
+	<p>Welcome to the Home Page {{user.name}}!</p>
 	<br>
-	<p>Here view what other people uploaded</p>
+	<p>Here you can upload your favorites activities and view what other people uploaded</p>
 	<p>to view activities press here</p>
+	<p>to upload a new acitivity press here</p>
+	<a href="{{url_for('add_new_activity')}}"> <button type="button" >upload an activity</button></a>
 	<a href="{{url_for('activities')}}"> <button type="button" >view all uploaded activities</button></a>
 </div>
 </body>

@@ -9,14 +9,23 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_activity(name,minage,maxage,atype,content):
+def add_activity(name,minage,maxage,atype,content,user):
 	activity_object = Activity(
 		name= name,
 		minage=minage,
 		maxage=maxage,
 		atype=atype,
-		content=content)
+		content=content,
+		user=user)
 	session.add(activity_object)
+	session.commit()
+
+def add_user(name, email, password):
+	user_object = User(
+		name=name,
+		email = email,
+		password = password)
+	session.add(user_object)
 	session.commit()
 
 def query_by_id(activity_id):
@@ -28,7 +37,11 @@ def query_all_activities():
 	activities = session.query(Activity).all()
 	return activities
 
-def query_by_name(activity_name):
-	activities=session.quert(Activity).filter_by(
-		activity_name=activity_name).all()
+def query_by_name(name):
+	activities=session.query(Activity).filter_by(
+		name=name).all()
 	return activities
+
+def query_user_by_email(email):
+	user = session.query(User).filter_by(email=email).first()
+	return user

@@ -7,6 +7,7 @@
 
 {%for activity in activities%}
 <h1>{{activity.name}}</h1>
+uploaded by: {{activity.user.name}} <br>
 suitable for ages: {{activity.minage}}-{{activity.maxage}} <br>
 type of acticity: {{activity.atype}}<br>
 contet:{{activity.content}}
