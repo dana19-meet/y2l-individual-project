@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>activities</title>
+	       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<ul>
+	<li><a  href="{{url_for('home')}}">Home</a></li>
+	</ul>
+	<br>
+	<br>
+	{%for activity in activities%}
+	<div class="view"">
+	<h1>{{activity.name}}</h1>
+	uploaded by: {{activity.user.name}} <br>
+	suitable for ages: {{activity.minage}}-{{activity.maxage}} <br>
+	type of acticity: {{activity.atype}}<br>
+	contet: {{activity.content}}
+	<br><br>
+	</div>
+	{%endfor%}
+<br>
+</body>
+</html>

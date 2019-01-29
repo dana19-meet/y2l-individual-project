@@ -31,14 +31,16 @@ def sign_up():
 @app.route('/home_logged_in', methods=['GET','POST'])
 def home_logged_in():
 	if request.method=='GET':
-		user=query_user_by_email(login_session['email'])
-		if user!= None:
+		if 'email' in login_session:
+			user=query_user_by_email(login_session['email'])
 			return render_template('home_logged_in.html', user=user)
+		else:
+			return render_template('home.html')
+		
 
 @app.route('/add_activity', methods=['POST','GET'])
 def add_new_activity():
 	if request.method=='POST':
-		print("login",login_session)
 		user = query_user_by_email(login_session['email'])
 		add_activity(request.form['activity_name'],request.form['min-age'],request.form['max-age'],
 			request.form['activity-type'],request.form['content'],user)
@@ -51,11 +53,24 @@ def activities():
 		activities=query_all_activities()
 		return render_template('activities.html',activities=activities)
 
+@app.route('/activities_guest',methods=['POST','GET'])
+def activities_guest():
+	if request.method=='GET':
+		activities=query_all_activities()
+		return render_template('activities_guest.html',activities=activities)
+
 @app.route('/search', methods=['POST'])
 def search():
 	if request.method=='POST':
 		activities=query_by_name(request.form['name'])
 		return render_template('activities.html',activities=activities)
+
+@app.route('/logout')
+def logout():
+	del login_session['email']
+	if 'user_name' in login_session.keys(): 
+		del login_session['user_name']
+	return redirect(url_for('home'))
 
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -2,23 +2,29 @@
 <html>
 <head>
 	<title>Activities Sharing</title>
+	       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-	<div>
-		<a href="{{url_for('home')}}"><button type="button">Home</button></a>
-		<a href="{{url_for('activities')}}"><button type="button">activities</button></a>
-		<form action="/search" method="post">
-			<input type="text" name="name" placeholder="activity name">
-		</form>
-	</div>
-<div>
+		<ul>
+		<li><a href="{{url_for('home_logged_in')}}">Home</a></li>
+		<li><a href="{{url_for('activities')}}">activities</a></li>
+        <li><a href="{{url_for('logout')}}">Log Out</a> <br></li>
+		<li><form action="/search" method="post">
+			<input type="text" name="name" placeholder="search by activity name">
+		</form></li>
+	</ul>
+	<br><br><br>
+<div class="home">
 	<p>Welcome to the Home Page {{user.name}}!</p>
 	<br>
 	<p>Here you can upload your favorites activities and view what other people uploaded</p>
 	<p>to view activities press here</p>
+	<a href="{{url_for('activities')}}"> <button type="button" class="button" >view all uploaded activities</button></a>
 	<p>to upload a new acitivity press here</p>
-	<a href="{{url_for('add_new_activity')}}"> <button type="button" >upload an activity</button></a>
-	<a href="{{url_for('activities')}}"> <button type="button" >view all uploaded activities</button></a>
+	<a href="{{url_for('add_new_activity')}}"> <button type="button" class="button" >add an activity</button></a><br><br>
+	<img src="../static/kids_playing.jpg" height="354" width="629">
+
 </div>
 </body>
 </html>

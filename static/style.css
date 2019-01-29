@@ -1,0 +1,120 @@
+h1{
+	font-weight: bold;
+	font-size: 40px;
+	font-family: "Comic Sans MS";
+	color: white;
+	text-align:center;
+}
+
+.view{
+/*	color: #2F4550;
+*/	font-family: "Comic Sans MS";
+	color: white;
+	text-align:center;
+	font-size: 18px;
+	border: 5px solid black;
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+.add{
+	text-align: center;
+	font-size: 20px;
+	font-family: "Comic Sans MS";
+
+}
+
+head{
+	background-color: #020202
+}
+
+body{
+	background-color: darkseagreen;
+	margin: 0;
+	text-decoration: none;
+/*	background-color: #87ACA3;
+*/}
+
+ul{
+	list-style-type: none;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+	position: fixed;
+	width: 100%;
+	font-family: "Comic Sans MS";
+	text-decoration: none;
+}
+
+li{
+	float: left;
+	border-left: 1px solid #1a1a1a;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-family: "Comic Sans MS";
+}
+a{
+	text-decoration: none;
+	color: white;
+	align-content: center;
+}
+/*li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-family: Cooper;
+}*/
+li:hover:not(.active){
+/*	background-color: darkseagreen;*/
+	text-decoration: none;
+	background-color: #394C39;
+}
+.active{
+	background-color: darkseagreen;
+	text-decoration: none;
+}
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  border-radius: 20px;
+	font-family: "Comic Sans MS";
+
+}
+button:hover:not(.active){
+/*	background-color: darkseagreen;*/
+	text-decoration: none;
+	background-color: #394C39;
+}
+.home{
+	font-size: 24px;
+	text-align: center;
+	font-family: "Comic Sans MS";
+}
+
+.special{
+	background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  border-radius: 20px;
+  font-family: "Comic Sans MS" ;
+}

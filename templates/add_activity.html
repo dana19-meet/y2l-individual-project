@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>uploading an activity</title>
+	<title>uploading an activity</title>	       
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
+	<ul>
+		<li><a href="{{url_for('home_logged_in')}}">Home</a></li>
+		<li><a href="{{url_for('activities')}}">activities</a></li>
+        <li><a href="{{url_for('logout')}}"> Log Out</a></li> 
+    </ul>
+	<br><br>
+	<div class="add">
+		<h1>Add an activity</h1>
 <form action="/add_activity" method="post">
 			<input type="text" name="activity_name" placeholder="activity name">
 			<br>
@@ -22,7 +32,8 @@
 			<textarea name="content" rows="10" cols="30">write the content here.
 			</textarea>
 			<br>
-			<input type="submit" name="submit">
+			<input type="submit" name="submit" value="Add activity" class="button">
     </form>
+    </div>
 </body>
 </html>

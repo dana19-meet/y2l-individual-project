@@ -2,14 +2,22 @@
 <html>
 <head>
 	<title>sign up</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
+	<ul>
+	<li><a href="{{url_for('home')}}">Home</a></li>
+	</ul>
+	<br><br><br>
+	<div class="add">
 	<p>sign up</p>
 		<form method="post">
-			<input type="text" name="name" placeholder="name">
-			<input type="text" name="email" placeholder="email">
-			<input type="password" name="password" placeholder="password">
-			<input type="submit" name="submit">
+			<input type="text" name="name" placeholder="name"> <br>
+			<input type="text" name="email" placeholder="email"><br>
+			<input type="password" name="password" placeholder="password"> <br>
+			<input type="submit" name="submit" value="Sign Up" class="button">
 		</form>
+	</div>
 </body>
 </html>
