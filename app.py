@@ -4,10 +4,11 @@ from flask import session as login_session
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = "dana-meet"
 
 @app.route('/',methods=['POST','GET'])
 def home():
+	print("login_session",login_session)
 	if request.method=='POST':
 		user = query_user_by_email(request.form['email'])
 		if user != None and user.password==request.form['password']:
