@@ -30,6 +30,7 @@ def sign_up():
 
 @app.route('/home_logged_in', methods=['GET','POST'])
 def home_logged_in():
+	print("login_session",login_session)
 	if request.method=='GET':
 		if 'email' in login_session:
 			user=query_user_by_email(login_session['email'])
